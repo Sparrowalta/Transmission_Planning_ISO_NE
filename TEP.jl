@@ -35,7 +35,7 @@ end
 case_scenarios = CSV.read(joinpath(@__DIR__, "cases.csv"), DataFrame, header=true, types=String)
 for scenario_name in names(case_scenarios)[5:end]
     @info "################$(repeat("#", length(scenario_name)))################"
-    @info "##### RUNNING SCENARIO: \"$scenario_name\" ... #####"
+    @info "## RUNNING SCENARIO: \"$scenario_name\" ... ###"
     @info "################$(repeat("#", length(scenario_name)))################"
     # Scenario name for output folder
     global output_directory = isempty(scenario_name) ? joinpath(@__DIR__, "outputs","base") : joinpath(@__DIR__, "outputs",scenario_name)
@@ -119,4 +119,5 @@ for scenario_name in names(case_scenarios)[5:end]
     @show raw_status(optimization_model)
     @show objective_value(optimization_model)    
     save_results(optimization_model, power_grid, total_time_steps)
+
 end
