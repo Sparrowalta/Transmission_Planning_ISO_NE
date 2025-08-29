@@ -1,5 +1,5 @@
 # Set up environment from .toml files
-# ]add DataFrames, CSV, JuMP, Gurobi, Plots, IJulia, Conda
+# add DataFrames, CSV, JuMP, Gurobi, Plots, IJulia, Conda
 import Pkg
 Pkg.activate(".")
 Pkg.instantiate()
@@ -121,3 +121,4 @@ for scenario_name in names(case_scenarios)[5:end]
     save_results(optimization_model, power_grid, total_time_steps)
 
 end
+
